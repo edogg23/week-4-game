@@ -18,25 +18,97 @@
 
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-md-6 col-md-offset-3">
-				<div class="title-square">
-					<h1>Crystals Collector!</h1>
+	<header> <!--header -->
+		<div class="container"> <!--  container -->
+			<div class="row"> <!-- header row -->
+				<div class="col-xs-12 col-sm-6"> <!-- column setup -->
+					<div class="logo">  <!-- game title -->
+						<h1>Crystals Collector!</h1>
+					</div> <!-- game title -->
+				</div> <!-- column setup -->
+			</div> <!-- header row -->
+		</div> <!--  container -->
+	</header> <!--header -->
+
+
+	<div class="container"> <!-- Container for rest of game -->
+		<div class="row"> <!-- row for instructions -->
+			<div class="col-xs-12 col-sm-8"> <!-- responsive screen info -->
+				<div class="instructions"> 
+					<h3>You will be given a random number at the start of the game. <br><br>
+
+						There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score. <br><br>
+
+						You win the game by matching your total score to a random number, you lose the game if your total score goes above the random number. <br><br>
+
+						The value of each crystal is hidden from you until you click on it. <br><br>
+
+						Each time the game starts, the value of each crystal changes.</h3>	
 				</div>
-				<div class="instructions">
-					<h3>instruction text</h3>
-				</div>
+			</div> <!-- responsive screen info -->
+		</div> <!-- row for instructions -->
+		
+		<div class="row"> <!-- row for random # and wins/losses -->
+			<div class="col-xs-8 col-sm-6">
 				<div class="randome-num">
 					<h2>46</h2>
 				</div>
+			</div>
+			<div class="col-xs-4 col-sm-6">
 				<div class="score">
 					<h3>wins: </h3>
 					<h3>losses: </h3>
 				</div>
 			</div>
-		</div>
-	</div>
-	
+		</div> <!-- row for random # and wins/losses -->
+
+
+		<div class="row"> <!-- row for the 4 crystals -->
+			<div class="col-xs-3"> <!-- red crystal column -->
+				<div class="red-crystal">
+					<img src="assets/images/redCrystal.jpg">
+					<h3>Red Crystal</h3>
+				</div>
+			</div> <!-- red crystal column -->
+			<div class="col-xs-3"> <!-- blue crystal column -->
+				<div class="blue-crystal">
+					<img src="assets/images/blueCrystal.jpg">
+					<h3>Blue Crystal</h3>
+				</div>
+			</div><!-- blue crystal column -->
+			<div class="col-xs-3"> <!-- yellow crystal column -->
+				<div class="yellow-crystal">
+					<img src="assets/images/yellowCrystal.jpg">
+					<h3>Orange Crystal</h3>
+				</div>
+			</div> <!-- yellow crystal column -->
+			<div class="col-xs-3"><!-- green crystal column -->
+				<div class="green-crystal">
+					<img src="assets/images/greenCrystal.jpg">
+					<h3>Green Crystal</h3>
+				</div>
+			</div> <!-- green crystal column -->
+		</div><!-- row for the 4 crystals -->
+		
+		
+		<div class="row"> <!-- row for total score label -->
+			<div class="col-xs-12">
+				<div class="total-score">
+					<h3>Your Total Score is: </h3>
+				</div>
+			</div>
+		</div> <!-- row for total score label -->
+		
+		<div class="row"> <!-- row for total score -->
+			<div class="col-xs-12">
+				<div class="total-score-count">
+					<h2>55</h2>
+				</div>
+			</div>
+		</div> <!-- row for total score -->
+		
+	</div> <!-- Container for rest of game -->
+
+<script src="assets/javascript/game.js"></script>
 </body>
 </html>
