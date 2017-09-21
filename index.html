@@ -50,14 +50,15 @@
 		
 		<div class="row"> <!-- row for random # and wins/losses -->
 			<div class="col-xs-8 col-sm-6">
-				<div class="randome-num">
-					<h2>46</h2>
-				</div>
+				<h2 class="target-number"></h2>
 			</div>
 			<div class="col-xs-4 col-sm-6">
+				<div class="actions">
+					<button class="action action-restart">Restart Game</button>
+				</div>
 				<div class="score">
-					<h3>wins: </h3>
-					<h3>losses: </h3>
+					<h3 class="series-wins">wins: <span class="series-wins-value">0</span></h3>
+					<h3 class="series-losses">losses: <span class="series-losses-value">0</span></h3>
 				</div>
 			</div>
 		</div> <!-- row for random # and wins/losses -->
@@ -65,47 +66,37 @@
 
 		<div class="row"> <!-- row for the 4 crystals -->
 			<div class="col-xs-3"> <!-- red crystal column -->
-				<div class="red-crystal">
+				<h3>Red Crystal</h3>
+				<button class="crystal crystal-red">
 					<img src="assets/images/redCrystal.jpg">
-					<h3>Red Crystal</h3>
-				</div>
+				</button>
 			</div> <!-- red crystal column -->
 			<div class="col-xs-3"> <!-- blue crystal column -->
-				<div class="blue-crystal">
+				<h3>Blue Crystal</h3>
+				<button class="crystal" id="crystal-blue">
 					<img src="assets/images/blueCrystal.jpg">
-					<h3>Blue Crystal</h3>
-				</div>
+				</button>
 			</div><!-- blue crystal column -->
 			<div class="col-xs-3"> <!-- yellow crystal column -->
-				<div class="yellow-crystal">
+				<h3>Orange Crystal</h3>
+				<button class="crystal crystal-yellow">
 					<img src="assets/images/yellowCrystal.jpg">
-					<h3>Orange Crystal</h3>
-				</div>
+				</button>
 			</div> <!-- yellow crystal column -->
 			<div class="col-xs-3"><!-- green crystal column -->
-				<div class="green-crystal">
+				<h3>Green Crystal</h3>
+				<button class="crystal crystal-green">
 					<img src="assets/images/greenCrystal.jpg">
-					<h3>Green Crystal</h3>
-				</div>
+				</button>
 			</div> <!-- green crystal column -->
 		</div><!-- row for the 4 crystals -->
 		
 		
 		<div class="row"> <!-- row for total score label -->
 			<div class="col-xs-12">
-				<div class="total-score">
-					<h3>Your Total Score is: </h3>
-				</div>
+				<h3 class="score-current">Your Current Score is: <span class="score-current-value"></span></h3>
 			</div>
 		</div> <!-- row for total score label -->
-		
-		<div class="row"> <!-- row for total score -->
-			<div class="col-xs-12">
-				<div class="total-score-count">
-					<h2>55</h2>
-				</div>
-			</div>
-		</div> <!-- row for total score -->
 		
 	</div> <!-- Container for rest of game -->
 
