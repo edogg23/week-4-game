@@ -1,10 +1,5 @@
 body {
-	/*background-image:
-	radial-gradient(closest-side, transparent 0%, transparent 75%, #B6CC66 76%, #B6CC66 85%, #EDFFDB 86%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%),
-	radial-gradient(closest-side, transparent 0%, transparent 75%, #B6CC66 76%, #B6CC66 85%, #EDFFDB 86%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%);
-	background-size: 110px 110px;
-	background-color: #C8D3A7;
-	background-position: 0 0, 55px 55px;*/
+	background-image: url("../images/background.jpg");
 }
 
 .logo {
@@ -19,17 +14,38 @@ body {
 	font-weight: bold;
 }
 
+#container {
+	width: 100%
+	margin: 0 auto;
+}
+
 .instructions {
 	background-color: #FCE5CC;
 	color: #81a44c;
+	width: 75%;
+	clear:both;
+	padding: 15px;
+	margin-top: 20px;
+	border: solid 1px #ddd
 }
 
-.randome-num {
-	background-color: #5bcb7c;
+#num-to-guess {
+	background-color: green;
+	float: left;
+	display: inline-block;
+	padding: 10px;
+	margin-top: 20px;
+	border: solid 1px #ddd
 }
 
 .score {
-	background-color: #4bfdff;
+	background-color: #03A9F4;
+	display: inline-block;
+	padding: 15px 20px 10px 15px;
+	margin-top: 20px;
+	margin-left: 20px;
+	border: solid 1px #ddd
+
 }
 
 .red-crystal,
@@ -42,6 +58,13 @@ body {
 .total-score,
 .total-score-count {
 	background-color: #2ba194;
+}
+
+#your-current-score {
+	background: #009688;
+	display: inline;
+	padding: 20px;
+	border: solid 1px #ddd
 }
 
 img {

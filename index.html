@@ -49,16 +49,16 @@
 		</div> <!-- row for instructions -->
 		
 		<div class="row"> <!-- row for random # and wins/losses -->
-			<div class="col-xs-8 col-sm-6">
-				<h2 class="target-number"></h2>
+			<div id="num-to-guess" class="col-xs-8 col-sm-6">
+				<h2 class="target-number">Number to guess: </h2>
 			</div>
 			<div class="col-xs-4 col-sm-6">
-				<div class="actions">
-					<button class="action action-restart">Restart Game</button>
-				</div>
 				<div class="score">
 					<h3 class="series-wins">wins: <span class="series-wins-value">0</span></h3>
 					<h3 class="series-losses">losses: <span class="series-losses-value">0</span></h3>
+				</div>
+				<div class="actions">
+					<button class="action action-restart">Restart Game</button>
 				</div>
 			</div>
 		</div> <!-- row for random # and wins/losses -->
@@ -67,33 +67,33 @@
 		<div class="row"> <!-- row for the 4 crystals -->
 			<div class="col-xs-3"> <!-- red crystal column -->
 				<h3>Red Crystal</h3>
-				<button class="crystal crystal-red">
-					<img src="assets/images/redCrystal.jpg">
+				<button class="crystal" id ="crystal-red">
+					<img src="assets/images/red.png">
 				</button>
 			</div> <!-- red crystal column -->
 			<div class="col-xs-3"> <!-- blue crystal column -->
 				<h3>Blue Crystal</h3>
 				<button class="crystal" id="crystal-blue">
-					<img src="assets/images/blueCrystal.jpg">
+					<img src="assets/images/blue.png">
 				</button>
 			</div><!-- blue crystal column -->
-			<div class="col-xs-3"> <!-- yellow crystal column -->
+			<div class="col-xs-3"> <!-- orange crystal column -->
 				<h3>Orange Crystal</h3>
-				<button class="crystal crystal-yellow">
-					<img src="assets/images/yellowCrystal.jpg">
+				<button class="crystal" id="crystal-orange">
+					<img src="assets/images/yellow.png">
 				</button>
-			</div> <!-- yellow crystal column -->
+			</div> <!-- orange crystal column -->
 			<div class="col-xs-3"><!-- green crystal column -->
 				<h3>Green Crystal</h3>
-				<button class="crystal crystal-green">
-					<img src="assets/images/greenCrystal.jpg">
+				<button class="crystal" id="crystal-green">
+					<img src="assets/images/green.png">
 				</button>
 			</div> <!-- green crystal column -->
 		</div><!-- row for the 4 crystals -->
 		
 		
 		<div class="row"> <!-- row for total score label -->
-			<div class="col-xs-12">
+			<div id="your-current-score" class="col-xs-12">
 				<h3 class="score-current">Your Current Score is: <span class="score-current-value"></span></h3>
 			</div>
 		</div> <!-- row for total score label -->

@@ -37,7 +37,7 @@ function getRandomInt(min, max) {
 
 function init() {
 	targetNumber = getRandomInt(gameMin, gameMax);
-	$targetNumber.html(targetNumber);
+	$targetNumber.append(targetNumber);
 	scoreCurrent = 0;
 	$scoreCurrent.html(scoreCurrent);
 
@@ -66,8 +66,41 @@ function init() {
 		var elemID = $(this).attr("id");
 		console.log($(this).attr('class'));
 		if (elemID === 'crystal-blue') {
-			console.log('clicked blue crystal');
+			console.log('clicked blue crystal: ' + blueCrystal);
+			scoreCurrent += blueCrystal;
+			$scoreCurrent.html(scoreCurrent);
+			console.log("current score: " + parseInt(scoreCurrent));
+
+			checkScore();
+		} 
+
+		if (elemID === 'crystal-red') {
+			console.log('clicked red crystal: ' + redCrystal);
+			scoreCurrent += redCrystal;
+			$scoreCurrent.html(scoreCurrent);
+			console.log("current score: " + parseInt(scoreCurrent));
+
+			checkScore();
+		
 		}
+		if (elemID === 'crystal-orange') {
+			console.log('clicked orange crystal');
+			scoreCurrent += orangeCrystal;
+			$scoreCurrent.html(scoreCurrent);
+			console.log("current score: " + parseInt(scoreCurrent));
+
+			checkScore();
+		} 
+		if (elemID === 'crystal-green') {
+			console.log('clicked green crystal');
+			scoreCurrent += greenCrystal;
+			$scoreCurrent.html(scoreCurrent);
+			console.log("current score: " + parseInt(scoreCurrent));
+
+			checkScore();
+		}
+
+		
 	}) 
 
 
@@ -75,13 +108,7 @@ function init() {
 	// 	var value = crystalValues[$crystals.eq($(this)))];
 	// 	console.log("crystal value: " + value);
 
-		$(this).on("click", function() {
-			scoreCurrent += value;
-			$scoreCurrent.html(scoreCurrent);
-			console.log("current score: " + parseInt(scoreCurrent));
-
-			checkScore();
-		});
+		
 	
 
 	active = 1;	
