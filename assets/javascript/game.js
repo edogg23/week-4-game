@@ -18,7 +18,7 @@ $( document ).ready(function() {
 	var value = 0;
 
 
-	var active = 0;	
+	var active = true;	
 
 	//html elements
 	var $targetNumber = $(".target-number");
@@ -27,6 +27,11 @@ $( document ).ready(function() {
 	var $scoreCurrent = $(".score-current-value");
 	var $restart = $(".action-restart");
 	var $crystals = $(".crystal");
+
+
+console.log("active true? " + active);
+
+
 
 function getRandomInt(min, max) {
 	min = Math.ceil(min);
@@ -46,17 +51,17 @@ function init() {
 	for (var i = 0; i < $crystals.length; i++) {
 		var random = getRandomInt(crystalMin, crystalMax);
 		crystalValues[i] = random;
-		console.log("crystal values: " + random);
+		// console.log("crystal values: " + random);
 	}
-	console.log(crystalValues);
+	// console.log(crystalValues);
 	redCrystal = crystalValues[0];
 	blueCrystal = crystalValues[1];
 	orangeCrystal = crystalValues[2];
 	greenCrystal = crystalValues[3];
-	console.log("red crystal: " + redCrystal);
-	console.log("blue crystal: " + blueCrystal);
-	console.log("orange crystal: " + orangeCrystal);
-	console.log("green crystal: " + greenCrystal);
+	// console.log("red crystal: " + redCrystal);
+	// console.log("blue crystal: " + blueCrystal);
+	// console.log("orange crystal: " + orangeCrystal);
+	// console.log("green crystal: " + greenCrystal);
 
 	//remove all click listeners
 	$crystals.off('click');
@@ -65,42 +70,46 @@ function init() {
 	$crystals.on("click", function(event) {  //attaches click handler to every crystal w/o using a for loop
 		var elemID = $(this).attr("id");
 		console.log($(this).attr('class'));
-		if (elemID === 'crystal-blue') {
-			console.log('clicked blue crystal: ' + blueCrystal);
-			scoreCurrent += blueCrystal;
-			$scoreCurrent.html(scoreCurrent);
-			console.log("current score: " + parseInt(scoreCurrent));
+		if(active) {
+			if (elemID === 'crystal-blue') {
+				console.log('clicked blue crystal: ' + blueCrystal);
+				scoreCurrent += blueCrystal;
+				$scoreCurrent.html(scoreCurrent);
+				console.log("current score: " + parseInt(scoreCurrent));
 
-			checkScore();
-		} 
+				checkScore();
+			} 
 
-		if (elemID === 'crystal-red') {
-			console.log('clicked red crystal: ' + redCrystal);
-			scoreCurrent += redCrystal;
-			$scoreCurrent.html(scoreCurrent);
-			console.log("current score: " + parseInt(scoreCurrent));
+			if (elemID === 'crystal-red') {
+				console.log('clicked red crystal: ' + redCrystal);
+				scoreCurrent += redCrystal;
+				$scoreCurrent.html(scoreCurrent);
+				console.log("current score: " + parseInt(scoreCurrent));
 
-			checkScore();
-		
+				checkScore();
+			
+			}
+			if (elemID === 'crystal-orange') {
+				console.log('clicked orange crystal');
+				scoreCurrent += orangeCrystal;
+				$scoreCurrent.html(scoreCurrent);
+				console.log("current score: " + parseInt(scoreCurrent));
+
+				checkScore();
+			} 
+			if (elemID === 'crystal-green') {
+				console.log('clicked green crystal');
+				scoreCurrent += greenCrystal;
+				$scoreCurrent.html(scoreCurrent);
+				console.log("current score: " + parseInt(scoreCurrent));
+
+				checkScore();
+			}
+
+			
+
 		}
-		if (elemID === 'crystal-orange') {
-			console.log('clicked orange crystal');
-			scoreCurrent += orangeCrystal;
-			$scoreCurrent.html(scoreCurrent);
-			console.log("current score: " + parseInt(scoreCurrent));
-
-			checkScore();
-		} 
-		if (elemID === 'crystal-green') {
-			console.log('clicked green crystal');
-			scoreCurrent += greenCrystal;
-			$scoreCurrent.html(scoreCurrent);
-			console.log("current score: " + parseInt(scoreCurrent));
-
-			checkScore();
-		}
-
-		
+	
 	}) 
 
 
@@ -111,34 +120,46 @@ function init() {
 		
 	
 
-	active = 1;	
+	active = true;	
+	console.log("active true? " + active);
  }
 
  function checkScore() {
 	$seriesWins;
 	$seriesLosses;
 
-	if (scoreCurrent < targetNumber) {
-		return;
-	} else if (scoreCurrent === targetNumber) {
-		seriesWins++;
-		$seriesWins.html(seriesWins);
-		active = 0;
-	} else {
-		seriesLosses++;
-		$seriesLosses.html(seriesLosses);
-		active = 0;
+	if (active) {
+		if (scoreCurrent < targetNumber) {
+			return;
+		} else if (scoreCurrent === targetNumber) {
+			seriesWins++;
+			$seriesWins.html(seriesWins);
+			active = false;
+		} else {
+			seriesLosses++;
+			$seriesLosses.html(seriesLosses);
+			active = false;
+		}
 	}
+	
  };
 
 console.log("losses: " + seriesLosses);
 console.log("wins: " + seriesWins);
 
-function restartGame() {
-	$restart.on("click", function() {
-		init();
-	});
-};
+
+var actionRestartGame=document.getElementsByClassName("action-restart");
+
+actionRestartGame[0].addEventListener("click", function() {
+    init();
+    // active = false;
+    $targetNumber.html("Number to guess: ");
+    $targetNumber.append(targetNumber);
+    console.log("target number: " + targetNumber)
+    console.log("active? " + active);
+});
+
+
 
 init();
 
